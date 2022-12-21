@@ -9,5 +9,4 @@ public class JournalListFinalJavaWebApplication {
     public static void main(String[] args) {
         SpringApplication.run(JournalListFinalJavaWebApplication.class, args);
     }
-
 }
