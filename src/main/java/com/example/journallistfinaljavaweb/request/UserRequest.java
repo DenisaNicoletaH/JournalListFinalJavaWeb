@@ -12,6 +12,11 @@ import lombok.Setter;
 
 public class UserRequest {
 
+
+    @NotNull
+    @NotBlank
+    private long id;
+
     //cannot be Null,cannot be Blank
     @NotNull
     @NotBlank
@@ -21,7 +26,7 @@ public class UserRequest {
     //can be null and blank-->not obligatory
     private String lastName;
 
-
+/*
     //the user will request a message which cannot be blank,null and needs to be (valid?)
     //recheck
     @NotBlank
@@ -29,8 +34,7 @@ public class UserRequest {
     @Valid
     private MessageRequest messageRequest;
 
-
-
+ */
 
 
 

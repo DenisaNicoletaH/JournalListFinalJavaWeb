@@ -20,7 +20,11 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(name="firstName",nullable = false)
+    private String firstName;
 
+    @Column(name="lastName",nullable = true)
+    private String lastName;
 
     @Column(nullable = false)
     private String description;
@@ -28,9 +32,19 @@ public class Message {
     @Column(nullable = true)
     private String image;
 
+    //many messages have 1 person
+@ManyToOne
+private User user;
 
+
+
+
+
+    //Takes this
     public Message(MessageRequest messageRequest){
-        description=messageRequest.getDescription();
+        firstName=messageRequest.getMessage();
+        lastName=messageRequest.getMessage();
+        description=messageRequest.getMessage();
         image=messageRequest.getImage();
     }
 

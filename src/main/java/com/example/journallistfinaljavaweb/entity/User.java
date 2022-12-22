@@ -1,17 +1,20 @@
 package com.example.journallistfinaljavaweb.entity;
 
+import com.example.journallistfinaljavaweb.request.UserRequest;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.validator.internal.util.logging.Messages;
 
+import java.util.List;
 
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name="messsages")
+@Table(name="user")
 
 
 //Need User(for messages)-->maybe change?????, Need Message(Cannot be nullable), Need Image(can be nullable)
@@ -25,17 +28,23 @@ public class User {
     private long id;
 
     //name
-    @Column(name="firstName" , nullable = false)
-    private String first_name;
+    @Column( nullable = false)
+    private String firstName;
 
-    @Column(name="lastName" , nullable = true)
-    private String last_name;
+    @Column(nullable = true)
+    private String lastName;
 
 
-    /*
-    //1 person can have many messages
-    @OneToMany(cascade= CascadeType.ALL, optional=false)
-    private User message;
+    //1 person can have many messages(messages are a list)
+@OneToMany
+private List<Message> messages;
 
-     */
+
+//many messages can have one person
+    public User(UserRequest userRequest){
+
+        firstName=userRequest.getFirstName();
+        lastName=userRequest.getLastName();
+
+    }
 }

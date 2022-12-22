@@ -17,7 +17,7 @@ public class MessageRequest {
 
 
     @NotBlank
-    private String description;
+    private String message;
 
     private String image;
 

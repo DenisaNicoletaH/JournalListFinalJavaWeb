@@ -7,11 +7,12 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface MessageRepository extends CrudRepository<Message,Long> {
+public interface MessageRepository extends CrudRepository<Message,String> {
+/*
+public List<Message> findAllByMessage(String FindMessage);
 
-public List<Message> findAllByMessageAnd(String message);
-
-//do the delete
-//@Transactional
+@Transactional
+void deleteAllById(long user_Id);
+*/
 
 }

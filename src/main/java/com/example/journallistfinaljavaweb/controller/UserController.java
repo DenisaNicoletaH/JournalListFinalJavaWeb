@@ -6,6 +6,7 @@ import com.example.journallistfinaljavaweb.request.UserRequest;
 import com.example.journallistfinaljavaweb.responses.MessageResponse;
 import com.example.journallistfinaljavaweb.responses.UserResponse;
 
+import com.example.journallistfinaljavaweb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +18,11 @@ import org.springframework.web.bind.annotation.*;
 
 
 public class UserController {
+/*
+    @Autowired
+    UserService userService;
+
+*/
 
 
 }
