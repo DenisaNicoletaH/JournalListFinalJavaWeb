@@ -19,9 +19,9 @@ public class MessageRequest {
     @NotBlank
     private String message;
 
-    private String image;
+   // private String image;
 
-    private String firstName;
+  //  private String firstName;
 
 
 

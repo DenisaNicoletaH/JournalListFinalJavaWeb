@@ -1,5 +1,6 @@
 package com.example.journallistfinaljavaweb.responses;
 
+import com.example.journallistfinaljavaweb.entity.Message;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,20 +12,21 @@ import org.springframework.stereotype.Service;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class MessageResponse {
 
     //might change this later
-    private String first_name;
+   // private String first_name;
 
 
     //forced--> user needs to input message
     private String description;
 
     //might remove
-    private String image;
+    //private String image;
 
-
+    public MessageResponse(Message message) {
+      description = message.getDescription();
+    }
 
 
 

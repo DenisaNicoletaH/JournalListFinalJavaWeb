@@ -19,33 +19,34 @@ public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
+/*
     @Column(name="firstName",nullable = false)
     private String firstName;
 
-    @Column(name="lastName",nullable = true)
+    @Column(name="lastName")
     private String lastName;
-
+*/
     @Column(nullable = false)
     private String description;
-
-    @Column(nullable = true)
+/*
+    @Column()
     private String image;
-
+*/
     //many messages have 1 person
+    /*
 @ManyToOne
 private User user;
 
-
+*/
 
 
 
     //Takes this
     public Message(MessageRequest messageRequest){
-        firstName=messageRequest.getMessage();
-        lastName=messageRequest.getMessage();
+        //firstName=messageRequest.getMessage();
+        //lastName=messageRequest.getMessage();
         description=messageRequest.getMessage();
-        image=messageRequest.getImage();
+        //image=messageRequest.getImage();
     }
 
 
