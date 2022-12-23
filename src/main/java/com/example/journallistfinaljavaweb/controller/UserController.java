@@ -14,10 +14,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@RequestMapping("/api/messages")
+@RequestMapping("/api/users")
 @CrossOrigin("*")
 @RestController
-public class MessageController {
+public class UserController {
 
     @Autowired
     MessageService messageService;
@@ -36,16 +36,6 @@ public class MessageController {
 
         return messageResponses;
     }
-
-    @PostMapping()
-    @ResponseStatus(HttpStatus.CREATED)
-    public MessageResponse addMessage(@Valid @RequestBody MessageRequest messageRequest)
-    {
-
-        Message savedMessage = messageService.addMessage(messageRequest);
-
-        return new MessageResponse(savedMessage);
-
-    }
-
 }
+
+

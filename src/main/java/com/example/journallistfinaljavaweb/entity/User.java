@@ -1,6 +1,7 @@
 package com.example.journallistfinaljavaweb.entity;
 
 import com.example.journallistfinaljavaweb.request.MessageRequest;
+import com.example.journallistfinaljavaweb.request.UserRequest;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,47 +9,27 @@ import lombok.Setter;
 
 
 @Entity
-@Table(name="messages")
+@Table(name="user_table")
 @Getter
 @Setter
 @NoArgsConstructor
-
-public class Message {
+public class User {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-/*
-    @Column(name="firstName",nullable = false)
+
+
+    @Column(name = "firstName", nullable = false)
     private String firstName;
 
-    @Column(name="lastName")
+    @Column(name = "lastName")
     private String lastName;
-*/
-    @Column(nullable = false)
-    private String description;
-/*
-    @Column()
-    private String image;
-*/
-    //many messages have 1 person
-    /*
-@ManyToOne
-private User user;
 
-*/
-
-
-
-    //Takes this
-    public Message(MessageRequest messageRequest){
+    public User(UserRequest userRequest) {
         //firstName=messageRequest.getMessage();
         //lastName=messageRequest.getMessage();
-        description=messageRequest.getMessage();
+        firstName = userRequest.getFirstName();
+        lastName = userRequest.getLastName();
         //image=messageRequest.getImage();
     }
-
-
-
-
 }
-

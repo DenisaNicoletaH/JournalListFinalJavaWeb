@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface MessageRepository extends CrudRepository<Message,String> {
+public interface MessageRepository extends CrudRepository<Message,Long> {
 /*
 public List<Message> findAllByMessage(String FindMessage);
 
