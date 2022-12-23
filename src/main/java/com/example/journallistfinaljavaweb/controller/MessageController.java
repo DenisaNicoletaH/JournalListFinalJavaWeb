@@ -24,6 +24,7 @@ public class MessageController {
 
     //get
 
+    //GETMAPPING
     @GetMapping()
     public List<MessageResponse> getAllMessages() {
         List<Message> messages = messageService.getAllMessage();
@@ -39,13 +40,17 @@ public class MessageController {
 
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
-    public MessageResponse addMessage(@Valid @RequestBody MessageRequest messageRequest)
-    {
+    public MessageResponse addMessage(
+            @Valid @RequestBody MessageRequest messageRequest
+    ){
 
         Message savedMessage = messageService.addMessage(messageRequest);
 
         return new MessageResponse(savedMessage);
 
     }
+
+
+
 
 }

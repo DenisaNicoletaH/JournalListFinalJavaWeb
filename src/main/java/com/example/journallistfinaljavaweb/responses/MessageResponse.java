@@ -22,10 +22,13 @@ public class MessageResponse {
     private String description;
 
     //might remove
-    //private String image;
+    private ImageResponse image;
 
     public MessageResponse(Message message) {
       description = message.getDescription();
+
+      if(message.getImage() != null)
+        image = new ImageResponse(message.getImage());
     }
 
 

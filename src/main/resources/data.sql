@@ -1,3 +1,3 @@
-INSERT INTO MESSAGES (description) VALUES ('gkuhgrhghewighaihaighoahgogaukgaku');
-INSERT INTO MESSAGES (description) VALUES ('gkuhgrhghewighaihaighoahgogaukgaku');
-INSERT INTO MESSAGES (description) VALUES ('gkuhgrhghewighaihaighoahgogaukgaku');
+INSERT INTO MESSAGES (description) VALUES ('hello');
+INSERT INTO MESSAGES (description) VALUES ('hello');
+INSERT INTO MESSAGES (description) VALUES ('hello');

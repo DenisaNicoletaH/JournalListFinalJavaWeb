@@ -1,5 +1,6 @@
 package com.example.journallistfinaljavaweb.request;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,15 +14,15 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class UserRequest {
+public class ImageRequest {
 
 
-    private long id;
 
     @NotBlank
-    private  String firstName;
+    private  String url;
 
-    private String lastName;
+
+
 
 
 }

@@ -1,5 +1,6 @@
 package com.example.journallistfinaljavaweb.repository;
-import com.example.journallistfinaljavaweb.entity.Message;
+
+import com.example.journallistfinaljavaweb.entity.Image;
 import jakarta.transaction.Transactional;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -7,9 +8,11 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface MessageRepository extends CrudRepository<Message,Long> {
+public interface ImageRepository extends CrudRepository<Image,Long> {
 
 
+    public List<Image> findAllById(long image_id);
 
 
 }
+

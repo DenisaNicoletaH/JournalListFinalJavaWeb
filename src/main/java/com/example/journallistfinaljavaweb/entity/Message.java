@@ -1,5 +1,6 @@
 package com.example.journallistfinaljavaweb.entity;
 
+import com.example.journallistfinaljavaweb.request.ImageRequest;
 import com.example.journallistfinaljavaweb.request.MessageRequest;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -17,34 +18,20 @@ public class Message {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-/*
-    @Column(name="firstName",nullable = false)
-    private String firstName;
 
-    @Column(name="lastName")
-    private String lastName;
-*/
     @Column(nullable = false)
     private String description;
-/*
-    @Column()
-    private String image;
-*/
-    //many messages have 1 person
-    /*
-@ManyToOne
-private User user;
 
-*/
-
+    //One message can have many url images
+    @OneToOne(cascade=CascadeType.ALL)
+    private Image image;
 
 
     //Takes this
     public Message(MessageRequest messageRequest){
-        //firstName=messageRequest.getMessage();
-        //lastName=messageRequest.getMessage();
+
         description=messageRequest.getMessage();
-        //image=messageRequest.getImage();
+        image = new Image(messageRequest.getImage());
     }
 
 
