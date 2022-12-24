@@ -17,18 +17,24 @@ public class MessageResponse {
     //might change this later
    // private String first_name;
 
-
+private long id;
     //forced--> user needs to input message
     private String description;
 
     //might remove
     private ImageResponse image;
 
+    private FriendResponse friend;
+
     public MessageResponse(Message message) {
+        id = message.getId();
       description = message.getDescription();
 
       if(message.getImage() != null)
         image = new ImageResponse(message.getImage());
+
+      if(message.getFriend()!=null)
+      friend = new FriendResponse(message.getFriend());
     }
 
 
