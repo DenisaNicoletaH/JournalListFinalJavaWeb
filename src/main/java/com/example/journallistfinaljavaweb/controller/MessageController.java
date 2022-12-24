@@ -40,4 +40,12 @@ public class MessageController {
 
 
 
+    @DeleteMapping("/{messageId}")
+    public void deleteMessage(@PathVariable long messageId){
+messageService.deleteCourse(messageId);
+    }
+
+
+
+
 }

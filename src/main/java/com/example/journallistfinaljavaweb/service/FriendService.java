@@ -10,6 +10,7 @@ import com.example.journallistfinaljavaweb.request.MessageRequest;
 import com.example.journallistfinaljavaweb.responses.FriendResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -53,5 +54,38 @@ public class FriendService {
         messageToBeSaved.setFriend(friend);
 
         return  messageRepository.save(messageToBeSaved);
+    }
+
+    public void deleteFriend(long friendId){
+        if(friendRepository.existsById(friendId)) {
+            friendRepository.deleteById(friendId);
+        }
+        else {
+            throw new ResourceNotFoundException("friend id not found");
+        }
+
+
+    }
+    //delete message without deleting the friend
+    public void deleteAllMessages(long friendId){
+        if(friendRepository.existsById(friendId)) {
+            messageRepository.deleteAllByFriendId(friendId);
+        }
+        else {
+            throw new ResourceNotFoundException("friend id not found");
+        }
+    }
+
+    public Friend updateFriend(long friendId, @RequestBody FriendRequest friendRequest){
+        if (friendRepository.existsById(friendId))
+        {
+            Friend friendtoBeUpdated=new Friend(friendRequest);
+            friendtoBeUpdated.setId(friendId);
+            return friendRepository.save(friendtoBeUpdated);
+        }
+        else{
+            throw new ResourceNotFoundException("message id not found");
+        }
+
     }
 }

@@ -11,5 +11,6 @@ public interface MessageRepository extends CrudRepository<Message,Long> {
 
     List<Message> findAllByFriendId(long id);
 
-
+    @Transactional
+void deleteAllByFriendId(long friendId);
 }

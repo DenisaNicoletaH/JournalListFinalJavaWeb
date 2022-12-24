@@ -73,4 +73,22 @@ public class FriendController {
         return new FriendResponse(savedFriend);
 
     }
+
+    @DeleteMapping("{friendId}/messages")
+    public void deleteAllMessage(@PathVariable long friendId){
+        friendService.deleteAllMessages(friendId);
+
+    }
+
+    @PutMapping("/{friendId}")
+    public FriendResponse updateMessage(@PathVariable long friendId,
+                                         @Valid  @RequestBody FriendRequest friendRequest){
+        return new FriendResponse(friendService.updateFriend(friendId,friendRequest));
+    }
+
+
+
+
+
+
 }
