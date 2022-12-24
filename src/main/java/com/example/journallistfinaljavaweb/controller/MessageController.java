@@ -38,19 +38,6 @@ public class MessageController {
         return messageResponses;
     }
 
-    @PostMapping()
-    @ResponseStatus(HttpStatus.CREATED)
-    public MessageResponse addMessage(
-            @Valid @RequestBody MessageRequest messageRequest
-    ){
-
-        Message savedMessage = messageService.addMessage(messageRequest);
-
-        return new MessageResponse(savedMessage);
-
-    }
-
-
 
 
 }

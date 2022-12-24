@@ -18,12 +18,6 @@ public class MessageService {
             return(List<Message>) messageRepository.findAll();
     }
 
-    public Message addMessage(MessageRequest messageRequest)
-    {
-        Message message = new Message(messageRequest);
-
-        return messageRepository.save(message);
-    }
 
 
 }

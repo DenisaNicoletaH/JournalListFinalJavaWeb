@@ -6,6 +6,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 
 @Entity
@@ -27,6 +29,10 @@ public class Message {
     private Image image;
 
 
+    @ManyToOne
+    @OnDelete(action = OnDeleteAction.NO_ACTION)
+    @JoinColumn(name = "friend_id")
+    private Friend friend;
     //Takes this
     public Message(MessageRequest messageRequest){
 
