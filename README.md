@@ -1,5 +1,8 @@
 The project’s title: Journal List.
 
+**Frontend**:
+https://github.com/DenisaNicoletaH/Journal-List_Frontend_JavaWebProject/tree/master
+
 Explanation:
 
 The BackEnd on my application consists of FriendController(GET,DELETE,PUT) MessageController(GET,POST,DELETE) who contain the function for the HTTP requests. In addition to that, there is an entity package that contains Friend, Image and Message. It contains the Table name, the Columns name 
