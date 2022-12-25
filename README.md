@@ -54,5 +54,6 @@ by clicking on their names.For GET we are able to get the messages that were inp
 
 
 **ENTITY RELATIONSHIP DIAGRAM**:
+Between the Image and the Messages there is a OnetoOne relationship. There is also a ManyToOne relationship between Friend_id and Message
 
-![image](https://user-images.githubusercontent.com/91993350/209455345-1fed456a-b90b-4ea4-bf08-c2b1dedd439d.png)
+![image](https://user-images.githubusercontent.com/91993350/209455472-726d4878-92af-4a08-8939-98fa255d6ffd.png)
