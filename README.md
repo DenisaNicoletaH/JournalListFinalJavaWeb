@@ -1,4 +1,4 @@
-The project’s title: Journal List.
+## Journal List.
 
 **Frontend**:
 https://github.com/DenisaNicoletaH/Journal-List_Frontend_JavaWebProject/tree/master
